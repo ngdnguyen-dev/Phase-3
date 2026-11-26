@@ -1,0 +1,123 @@
+{
+  "task": "Phase 3.2 - Vision Transformer (ViT-B/16) on CIFAR-100",
+  "environment": "Google Colab",
+  "device": "Tesla T4",
+  "model_name": "google/vit-base-patch16-224-in21k",
+  "total_params": 85875556,
+  "config": {
+    "seed": 42,
+    "model_name": "google/vit-base-patch16-224-in21k",
+    "data_dir": "./data",
+    "output_dir": "./outputs/vit_cifar100",
+    "val_ratio": 0.1,
+    "epochs": 5,
+    "batch_size": 64,
+    "eval_batch_size": 128,
+    "lr": 5e-05,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "label_smoothing": 0.1,
+    "max_grad_norm": 1.0,
+    "num_workers": 2,
+    "fast_demo_mode": false
+  },
+  "results": {
+    "best_val_epoch": 5,
+    "best_val_top1_pct": 92.48,
+    "test_loss": 0.4038,
+    "test_top1_accuracy_pct": 92.22,
+    "test_top5_accuracy_pct": 99.12,
+    "macro_precision_pct": 92.3,
+    "macro_recall_pct": 92.22,
+    "macro_f1_pct": 92.23,
+    "superclass_accuracy_pct": 96.5,
+    "same_superclass_error_ratio_pct": 55.01,
+    "train_time_minutes": 36.88,
+    "top10_easiest_classes": {
+      "lawn_mower": 100.0,
+      "wolf": 99.0,
+      "tank": 99.0,
+      "sunflower": 99.0,
+      "skunk": 99.0,
+      "motorcycle": 99.0,
+      "chimpanzee": 99.0,
+      "apple": 99.0,
+      "orange": 99.0,
+      "tractor": 99.0
+    },
+    "top10_hardest_classes": {
+      "oak_tree": 73.0,
+      "maple_tree": 75.0,
+      "girl": 78.0,
+      "boy": 79.0,
+      "willow_tree": 79.0,
+      "pine_tree": 80.0,
+      "possum": 81.0,
+      "bowl": 81.0,
+      "otter": 82.0,
+      "seal": 83.0
+    },
+    "top10_confused_pairs": [
+      {
+        "true": "oak_tree",
+        "pred": "maple_tree",
+        "count": 21,
+        "same_superclass": true
+      },
+      {
+        "true": "maple_tree",
+        "pred": "oak_tree",
+        "count": 19,
+        "same_superclass": true
+      },
+      {
+        "true": "seal",
+        "pred": "otter",
+        "count": 10,
+        "same_superclass": true
+      },
+      {
+        "true": "bowl",
+        "pred": "plate",
+        "count": 9,
+        "same_superclass": true
+      },
+      {
+        "true": "girl",
+        "pred": "baby",
+        "count": 9,
+        "same_superclass": true
+      },
+      {
+        "true": "man",
+        "pred": "boy",
+        "count": 9,
+        "same_superclass": true
+      },
+      {
+        "true": "pine_tree",
+        "pred": "oak_tree",
+        "count": 9,
+        "same_superclass": true
+      },
+      {
+        "true": "willow_tree",
+        "pred": "maple_tree",
+        "count": 9,
+        "same_superclass": true
+      },
+      {
+        "true": "baby",
+        "pred": "boy",
+        "count": 8,
+        "same_superclass": true
+      },
+      {
+        "true": "boy",
+        "pred": "man",
+        "count": 8,
+        "same_superclass": true
+      }
+    ]
+  }
+}

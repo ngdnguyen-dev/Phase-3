@@ -1,0 +1,74 @@
+{
+  "task": "Phase 3.1 - Basic CNN on CIFAR-10",
+  "environment": "Google Colab",
+  "device": "Tesla T4",
+  "config": {
+    "seed": 42,
+    "data_dir": "./data",
+    "output_dir": "./outputs/cnn_cifar10",
+    "val_ratio": 0.1,
+    "batch_size": 128,
+    "num_workers": 2,
+    "run_baseline_comparison": true,
+    "baseline_epochs": 15,
+    "baseline_lr": 0.001,
+    "improved_epochs": 35,
+    "improved_lr": 0.001,
+    "weight_decay": 0.0005,
+    "label_smoothing": 0.05
+  },
+  "baseline_simple_cnn": {
+    "params": 620362,
+    "test_accuracy_pct": 75.88,
+    "train_time_sec": 159.8
+  },
+  "improved_basic_cnn": {
+    "params": 815082,
+    "best_val_epoch": 33,
+    "best_val_accuracy_pct": 86.22,
+    "test_loss": 0.4264,
+    "test_accuracy_pct": 86.0,
+    "macro_f1_pct": 85.87,
+    "weighted_f1_pct": 85.87,
+    "train_time_sec": 1238.6,
+    "per_class_accuracy_pct": {
+      "airplane": 86.8,
+      "automobile": 94.2,
+      "bird": 75.4,
+      "cat": 66.6,
+      "deer": 85.9,
+      "dog": 83.0,
+      "frog": 92.3,
+      "horse": 89.8,
+      "ship": 93.3,
+      "truck": 92.7
+    },
+    "top5_confused_pairs": [
+      {
+        "true": "cat",
+        "pred": "dog",
+        "count": 144
+      },
+      {
+        "true": "dog",
+        "pred": "cat",
+        "count": 77
+      },
+      {
+        "true": "bird",
+        "pred": "frog",
+        "count": 69
+      },
+      {
+        "true": "cat",
+        "pred": "frog",
+        "count": 62
+      },
+      {
+        "true": "bird",
+        "pred": "dog",
+        "count": 49
+      }
+    ]
+  }
+}
